@@ -8,7 +8,6 @@ export class ResortsFilterPipe implements PipeTransform {
 
   transform(resorts: Resort[], type: string): Resort[] {
     if (!type || type === 'All') {
-      console.log(resorts);
       return resorts;
     }
 

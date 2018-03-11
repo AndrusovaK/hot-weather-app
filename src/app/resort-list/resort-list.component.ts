@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Resort, RESORTS$} from '../data';
 import { ResortsFilterPipe } from '../common/pipes/resorts-filter.pipe';
 import {Observable} from 'rxjs/Observable';
@@ -26,8 +26,6 @@ export class ResortListComponent implements OnInit, OnDestroy {
         result.push(type);
       }
     }
-
-    console.log(result);
     return result;
   }
 
