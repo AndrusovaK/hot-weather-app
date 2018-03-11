@@ -7,5 +7,5 @@ import {Resort} from './data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public selectedResort: Resort;
+
 }

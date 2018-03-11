@@ -8,6 +8,7 @@ import { ResortItemComponent } from './resort-item/resort-item.component';
 import { ResortWeatherComponent } from './resort-weather/resort-weather.component';
 import { ResortSocialComponent } from './resort-social/resort-social.component';
 import { ResortsFilterPipe } from './common/pipes/resorts-filter.pipe';
+import {ChangeResortService} from './change-resort.service';
 
 
 @NgModule({
@@ -22,7 +23,10 @@ import { ResortsFilterPipe } from './common/pipes/resorts-filter.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [ResortsFilterPipe],
+  providers: [
+    ResortsFilterPipe,
+    ChangeResortService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

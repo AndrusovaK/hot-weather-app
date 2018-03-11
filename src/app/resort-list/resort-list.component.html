@@ -1,4 +1,4 @@
-<div class="element-left">
+<div class="element-left" *ngIf="selectedResort">
   <div class="element-bg-img">
     <img src="{{selectedResort.image}}" alt="" class="img-responsive">
   </div>
@@ -6,7 +6,8 @@
     <div class="ele-strip">
       <ul>
         <li *ngFor="let type of resortTypes; last as isLast"
-            [ngClass]="{'anc-bor': isLast}" (click)="changeType(type)">
+            [ngClass]="{'anc-bor': isLast}"
+            (click)="changeType(type)">
           <a>{{type}}</a>
         </li>
       </ul>

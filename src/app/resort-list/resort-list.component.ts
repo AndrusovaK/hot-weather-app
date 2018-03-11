@@ -3,6 +3,7 @@ import {Resort, RESORTS$} from '../data';
 import { ResortsFilterPipe } from '../common/pipes/resorts-filter.pipe';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
+import {ChangeResortService} from '../change-resort.service';
 
 @Component({
   selector: 'app-resort-list',
@@ -11,15 +12,7 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class ResortListComponent implements OnInit, OnDestroy {
 
-  @Input()
   public selectedResort: Resort;
-
-/*  @Input()
-  public resortList: Resort[];*/
-
-  @Output()
-  public resortChanged = new EventEmitter<Resort>();
-
   public resortTypes: string[];
   public selectedType = 'All';
 
@@ -40,7 +33,7 @@ export class ResortListComponent implements OnInit, OnDestroy {
 
   public selectResort(resort: Resort) {
     this.selectedResort = resort;
-    this.resortChanged.emit(resort);
+    this.changeResortService.changeResort(this.selectedResort);
   }
 
   public changeType(type: string) {
@@ -49,7 +42,8 @@ export class ResortListComponent implements OnInit, OnDestroy {
     this.selectResort(filteredResorts[0]);
   }
 
-  constructor(private resortsFilter: ResortsFilterPipe) { }
+  constructor(private resortsFilter: ResortsFilterPipe,
+              private changeResortService: ChangeResortService) { }
 
   ngOnInit() {
     this.resortsSubscription = this.resorts$.subscribe((resorts: Resort[]) => {

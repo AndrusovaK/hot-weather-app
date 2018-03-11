@@ -36,7 +36,7 @@ export const Resorts: Resort[] = [
     address: 'Placa Cataluna, 4',
     phone: '063452859874',
     image: './assets/images/barcelona.jpg',
-    types: ['Beach', 'Historic'],
+    types: ['Beach'],
     weather: {
       title: 'Excellent',
       icon: 'cloudy',

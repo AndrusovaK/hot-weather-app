@@ -1,16 +1,9 @@
 <div class="element">
   <h1>Hot Weather Widget</h1>
-  <app-resort-list
-    [selectedResort]="selectedResort"
-    (resortChanged)="selectedResort = $event">
-  </app-resort-list>
+  <app-resort-list></app-resort-list>
   <div class="element-right">
-    <app-resort-weather
-      [weather]="selectedResort?.weather">
-    </app-resort-weather>
-    <app-resort-social
-      [socialInfo]="selectedResort?.socialInfo">
-    </app-resort-social>
+    <app-resort-weather></app-resort-weather>
+    <app-resort-social></app-resort-social>
   </div>
   <div class="clear"> </div>
 </div>
